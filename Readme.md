@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 - Студент: [Надежда Палаш](https://up.htmlacademy.ru/htmlcss/29/user/1191579).
-- Наставник: `Вадим Новаш`.
+- Наставник: [Вадим Новаш](https://htmlacademy.ru/profile/stakeout).
 
 ---
 
