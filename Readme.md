@@ -3,7 +3,7 @@
 - Студент: [Надежда Палаш](https://up.htmlacademy.ru/htmlcss/29/user/1191579).
 - Наставник: [Вадим Новаш](https://htmlacademy.ru/profile/stakeout).
 
----
+-----
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
 _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`._
