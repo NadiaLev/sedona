@@ -63,11 +63,11 @@
   background-color: var(--lightgrey-basic);
 }
 
-a {
+.page-body a {
   text-decoration: none;
 }
 
-img {
+.page-body img {
   max-width: 100%;
   height: auto;
 }
