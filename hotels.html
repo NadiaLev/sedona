@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
 
 </head>
 
-<body class="page-body">
+<body class="page">
   <header class="main-header">
     <nav class="main-nav">
       <a class="logo" href="index.html">
@@ -37,7 +37,7 @@
     <section class="filters">
       <h2 class="visually-hidden">Фильтр</h2>
       <form class="filter-form" action="#" method="post">
-        <fieldset class="filter filter-infrastructure">
+        <fieldset class="filter-group filter-infrastructure">
           <legend class="filter-title">Инфраструктура</legend>
           <ul class="filter-list">
             <li class="filter-item">
@@ -46,16 +46,18 @@
               <label class="filter__label" for="first-filter-infrastructure">Бассейн</label>
             </li>
             <li class="filter-item">
-              <input class="visually-hidden filter__input" type="checkbox" id="second-filter-infrastructurem"
+              <input class="visually-hidden filter__input" type="checkbox" id="second-filter-infrastructure"
                 name="second-filter-infrastructure">
-              <label class="filter__label" for="second-filter-infrastructure">Парковка</label </li>
+              <label class="filter__label" for="second-filter-infrastructure">Парковка</label>
+            </li>
             <li class="filter-item">
               <input class="visually-hidden filter__input" type="checkbox" id="third-filter-infrastructure"
                 name="third-filter-infrastructure">
-              <label class="filter__label" for="third-filter-infrastructure">WI-FI</label </li>
+              <label class="filter__label" for="third-filter-infrastructure">WI-FI</label>
+            </li>
           </ul>
         </fieldset>
-        <fieldset class="filter filter-type">
+        <fieldset class="filter-group filter-type">
           <legend class="filter-title">Тип жилья</legend>
           <ul class="filter-list">
             <li class="filter-item">
@@ -66,15 +68,17 @@
             <li class="filter-item">
               <input class="visually-hidden filter__input" type="checkbox" id="second-filter-type"
                 name="second-filter-type" checked>
-              <label class="filter__label" for="second-filter-type">Мотель</label </li>
+              <label class="filter__label" for="second-filter-type">Мотель</label>
+            </li>
             <li class="filter-item">
               <input class="visually-hidden filter__input" type="checkbox" id="third-filter-type"
                 name="third-filter-type" checked>
-              <label class="filter__label" for="third-filter-type">Апартаменты</label </li>
+              <label class="filter__label" for="third-filter-type">Апартаменты</label>
+            </li>
           </ul>
         </fieldset>
-        <div class="filter-range">
-          <div class="filter-range-title">Стоимость в сутки (р):</div>
+        <fieldset class="filter-range">
+          <legend class="filter-range-title">Стоимость в сутки (р):</legend>
           <div class="price-controls">
             <label class="min-price">от<input type="text" name="min-price" value="0"></label>
             <label class="max-price">до<input type="text" name="max-price" value="3000"></label>
@@ -86,8 +90,8 @@
             <div class="range-toogle range-toogle-min"></div>
             <div class="range-toogle range-toogle-max"></div>
           </div>
-        </div>
-        <button class="btn-filter" type="submit">Показать</button>
+        </fieldset>
+        <button class="btn-filter" type="submit" name="filter-form-submit">Показать</button>
       </form>
     </section>
 
@@ -95,7 +99,7 @@
       <h2 class="visually-hidden">Сортировка</h2>
       <p class="sort-text">Найдено:<span>3</span></p>
       <div class="sort-group">
-        <h3 class="sort-title">Сортировка:</h3>
+        <p class="sort-title">Сортировка:</p>
         <ul class="sort-list">
           <li class="sort-item"><a href="#">по цене</a></li>
           <li class="sort-item"><a href="#">по типу</a></li>
@@ -103,49 +107,55 @@
         </ul>
       </div>
       <div class="sort-arrows">
-        <button class="button-down" type="button" aria-label="Вниз" title="Вниз"></button>
-        <button class="button-up" type="button" aria-label="Вверх" title="Вверх"></button>
+        <button class="sort-btn down" type="button" aria-label="Вниз" title="Вниз"></button>
+        <button class="sort-btn up" type="button" aria-label="Вверх" title="Вверх"></button>
       </div>
     </section>
 
     <section class="offers">
       <h2 class="visually-hidden">Предложения</h2>
       <article class="offers-item">
-        <div class="hotel-img">
+        <div class="hotel-img-wrap">
           <img src="img/first-hotel.jpg" width="135" height="90" alt="Фотография гостиницы">
         </div>
         <div class="offer-content">
-          <h3 class="offer-title"><a href="#">Amara Resort & Spa</a></h3>
+          <a class="offer-link" href="#">
+            <h3 class="offer-title">Amara Resort & Spa</h3>
+          </a>
           <p class="offer-text">Гостиница</p>
           <p class="offer-price">от 4000 р.</p>
           <a class="btn btn-offer" href="#">Подробнее</a>
-          <button class="button button-offer" href="#">Забронировать</button>
+          <button class="button button-offer">Забронировать</button>
         </div>
         <p class="offer-mark">Рейтинг: <span>8,5</span></p>
       </article>
       <article class="offers-item">
-        <div class="hotel-img">
+        <div class="hotel-img-wrap">
           <img src="img/second-hotel.jpg" width="135" height="90" alt="Фотография гостиницы">
         </div>
         <div class="offer-content">
-          <h3 class="offer-title"><a href="#">Desert Quail Inn</a></h3>
+          <a class="offer-link" href="#">
+            <h3 class="offer-title">Desert Quail Inn</h3>
+          </a>
           <p class="offer-text">Мотель</p>
           <p class="offer-price">от 3000 р.</p>
           <a class="btn btn-offer" href="#">Подробнее</a>
-          <button class="button button-offer" href="#">Забронировать</button>
+          <button class="button button-offer">Забронировать</button>
         </div>
         <p class="offer-mark">Рейтинг: <span>8,9</span></p>
       </article>
       <article class="offers-item">
-        <div class="hotel-img">
+        <div class="hotel-img-wrap">
           <img src="img/third-hotel.jpg" width="135" height="90" alt="Фотография гостиницы">
         </div>
         <div class="offer-content">
-          <h3 class="offer-title"><a href="#">Villas at Poco Diablo</a></h3>
+          <a class="offer-link" href="#">
+            <h3 class="offer-title">Villas at Poco Diablo</h3>
+          </a>
           <p class="offer-text">Апартаменты</p>
           <p class="offer-price">от 2000 р.</p>
           <a class="btn btn-offer" href="#">Подробнее</a>
-          <button class="button button-offer" href="#">Забронировать</button>
+          <button class="button button-offer">Забронировать</button>
         </div>
         <p class="offer-mark">Рейтинг: <span>9,2</span></p>
       </article>
@@ -153,42 +163,29 @@
   </main>
 
   <footer class="page-footer">
-    <p class="footer-contacts">
+    <p class="contacts">
       #VisitSedona<br>
       Тел: <a class="contacts-phone" href="tel:+74956660166">+7 (495) 666-01-66</a>
     </p>
 
-    <ul class="footer-social">
+    <ul class="socials">
       <li>
-        <a class="social-link" target="_blank" href="#" aria-label="Мы в Twitter">
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M10.95 1.14409C12.635 0.648089 13.934 1.41409 14.527 2.32309C15.2 2.09209 15.858 1.84209 16.538 1.61509C16.5249 2.30145 16.2117 2.94761 15.681 3.38309C16.366 3.55309 16.985 2.89209 16.985 2.89209C16.816 3.89209 15.979 4.68009 15.422 4.91609C15.191 11.6661 12.247 16.1331 5.34498 15.9981H4.89898C4.48898 15.9981 0.734977 15.5381 0.000976562 14.1111C2.27198 14.3071 3.89398 13.6891 4.69398 12.9341C3.73398 12.6341 2.01498 12.4571 1.71498 9.98409C2.06398 10.0901 2.27898 10.2121 2.90498 10.1031C1.70498 9.24709 0.373977 8.53009 0.447977 6.33009C0.732977 6.65809 1.51498 6.86609 1.78798 6.80209C1.08498 6.56109 -0.182023 3.44209 0.893977 1.85009C2.71198 3.70409 4.62898 5.45609 8.04598 5.62309C8.25398 3.33009 9.18298 1.79309 10.95 1.14409Z"
-              fill="white" />
-          </svg>
+        <a class="social-link twitter" target="_blank" href="#" aria-label="Мы в Twitter">
         </a>
       </li>
       <li>
-        <a class="social-link" target="_blank" href="#" aria-label="Мы в Facebook">
-          <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z" fill="white" />
-          </svg>
+        <a class="social-link facebook" target="_blank" href="#" aria-label="Мы в Facebook">
         </a>
       </li>
       <li>
-        <a class="social-link" target="_blank" href="#" aria-label="Мы в Youtube">
-          <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M3 0H17C18.65 0 20 1.35 20 3V13C20 14.65 18.65 16 17 16H3C1.35 16 0 14.65 0 13V3C0 1.35 1.35 0 3 0ZM6.027 4.002V11.998L15.014 8L6.027 4.002Z"
-              fill="white" />
-          </svg>
+        <a class="social-link youtube" target="_blank" href="#" aria-label="Мы в Youtube">
         </a>
       </li>
     </ul>
 
-    <p class="footer-copyright">
+    <p class="сopyright">
       <b>Website by</b>
-      <a class="footer-copyright" target="_blank" href="https://htmlacademy.ru/intensive/htmlcss"
+      <a class="copyright-link" target="_blank" href="https://htmlacademy.ru/intensive/htmlcss"
         aria-label="HTML Academy">
         <svg width="115" height="41" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
