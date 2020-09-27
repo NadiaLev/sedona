@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 
 <head>
   <meta charset="utf-8">
@@ -9,8 +9,8 @@
 
 </head>
 
-<body class="page">
-  <header class="main-header">
+<body class="page-body">
+  <header class="main-header container">
     <nav class="main-nav">
       <a class="logo" href="index.html">
         <img src="img/main-logo.svg" width="138" height="70" alt="Логотип города Седона">
@@ -90,14 +90,14 @@
             <div class="range-toogle range-toogle-min"></div>
             <div class="range-toogle range-toogle-max"></div>
           </div>
+          <button class="btn-filter" type="submit" name="filter-form-submit">Показать</button>
         </fieldset>
-        <button class="btn-filter" type="submit" name="filter-form-submit">Показать</button>
       </form>
     </section>
 
     <section class="sort">
       <h2 class="visually-hidden">Сортировка</h2>
-      <p class="sort-text">Найдено:<span>3</span></p>
+      <p class="sort-text">Найдено: <span>3</span></p>
       <div class="sort-group">
         <p class="sort-title">Сортировка:</p>
         <ul class="sort-list">
@@ -107,8 +107,8 @@
         </ul>
       </div>
       <div class="sort-arrows">
-        <button class="sort-btn down" type="button" aria-label="Вниз" title="Вниз"></button>
-        <button class="sort-btn up" type="button" aria-label="Вверх" title="Вверх"></button>
+        <a class="arrow arrow-up" href="#" aria-label="По возрастанию"></a>
+        <a class="arrow arrow-down" href="#" aria-label="По убыванию"></a>
       </div>
     </section>
 
@@ -162,7 +162,7 @@
     </section>
   </main>
 
-  <footer class="page-footer">
+  <footer class="page-footer container">
     <p class="contacts">
       #VisitSedona<br>
       Тел: <a class="contacts-phone" href="tel:+74956660166">+7 (495) 666-01-66</a>
@@ -183,7 +183,7 @@
       </li>
     </ul>
 
-    <p class="сopyright">
+    <p class="copyright">
       <b>Website by</b>
       <a class="copyright-link" target="_blank" href="https://htmlacademy.ru/intensive/htmlcss"
         aria-label="HTML Academy">
