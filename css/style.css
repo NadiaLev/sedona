@@ -10,6 +10,7 @@
   --white-transparent: rgba(255, 255, 255, 0.3);
   --page-shadow: rgba(0, 1, 1, 0.2);
   --modal-shadow: rgba(0, 1, 1, 0.15);
+  --hotel-title-active: rgba(0, 1, 1, 0.3);
   --nav-active: #766357;
   --footer-back: rgba(255, 255, 255, 0.9);
 
@@ -91,20 +92,15 @@ input[type="radio"].visually-hidden {
   background-color: var(--lightgrey-basic);
 }
 
-.page-body {
+.page-wrapper {
   min-height: 100%;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
-}
-
-/*Container*/
-.container {
   margin: 0 auto;
   width: 1200px;
-  box-shadow:/*15px 0px 5px -15px rgba(0, 1, 1, 0.2),
-            -15px 0px 5px -15px rgba(0, 1, 1, 0.2);*/ 0px
-    5px 15px rgba(0, 1, 1, 0.2);
+  box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  background-color: var(--white-basic);
 }
 
 /*Button*/
@@ -155,10 +151,6 @@ input[type="radio"].visually-hidden {
 }
 
 /*Header*/
-.main-header {
-  background-color: var(--white-basic);
-}
-
 .main-nav {
   position: relative;
   min-height: 70px;
@@ -236,10 +228,6 @@ input[type="radio"].visually-hidden {
   background-color: var(--footer-back);
 }
 
-.index-footer {
-  margin-top: -120px;
-}
-
 .contacts {
   margin: 0;
   padding-left: 73px;
@@ -256,26 +244,30 @@ input[type="radio"].visually-hidden {
 .socials {
   display: flex;
   margin: 0;
+  margin-left: -6px;
   padding: 0;
   justify-self: center;
   list-style: none;
 }
 
-.social-link {
+.socials-item {
+  margin-left: 6px;
+}
+
+.socials-link {
   position: relative;
   display: block;
-  margin-left: 6px;
   width: 48px;
   height: 48px;
   background-color: var(--blue-basic);
 }
 
-.social-link:focus,
-.social-link:hover {
+.socials-link:focus,
+.socials-link:hover {
   background-color: var(--blue-btn-focus);
 }
 
-.social-link:active {
+.socials-link:active {
   background-color: var(--blue-btn-active);
 }
 
@@ -329,7 +321,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   margin: 0;
   padding-right: 73px;
-  text-align: center;
+  justify-self: center;
 }
 
 .copyright b {
@@ -351,7 +343,6 @@ input[type="radio"].visually-hidden {
 
 /*Modal*/
 .modal {
-  background-color: var(--white-basic);
   box-shadow: 0px 7px 15px var(--modal-shadow);
 }
 
@@ -431,7 +422,6 @@ input[type="radio"].visually-hidden {
 /*Promo*/
 .promo {
   margin-top: -14px;
-  background-color: var(--white-basic);
 }
 
 .promo-photo {
@@ -526,12 +516,19 @@ input[type="radio"].visually-hidden {
   grid-row: 1 / 2;
 }
 
-.advantages-item-shortly,
 .advantages-description {
   width: 400px;
   min-height: 256px;
   padding: 47px;
   box-sizing: border-box;
+}
+
+.advantages-item-shortly {
+  width: 400px;
+  min-height: 256px;
+  padding: 47px;
+  box-sizing: border-box;
+  background-color: var(--lightgrey-basic);
 }
 
 .advantages-photo img {
@@ -604,7 +601,6 @@ input[type="radio"].visually-hidden {
   padding-left: 73px;
   padding-right: 73px;
   min-height: 291px;
-  background-color: var(--white-basic);
   box-sizing: border-box;
 }
 
@@ -632,6 +628,10 @@ input[type="radio"].visually-hidden {
 }
 
 /*Map*/
+.map {
+  margin-bottom: -120px;
+}
+
 .map-box img {
   display: block;
 }
@@ -742,7 +742,6 @@ input[type="radio"].visually-hidden {
   min-height: 86px;
   padding: 0 73px;
   align-items: center;
-  background-color: var(--white-basic);
 }
 
 .sort-group {
@@ -805,10 +804,6 @@ input[type="radio"].visually-hidden {
 }
 
 /*Offers*/
-.offers {
-  background-color: var(--white-basic);
-}
-
 .offers-item {
   display: grid;
   grid-template-columns: 164px 1fr min-content;
@@ -841,11 +836,20 @@ input[type="radio"].visually-hidden {
 .offer-content {
   display: flex;
   flex-direction: column;
+  padding-right: 100px;
 }
 
 .offer-link {
   display: inline-block;
   color: var(--black-basic);
+}
+
+.offer-link:hover {
+  color: var(--blue-basic);
+}
+
+.offer-link:active {
+  color: var(--hotel-title-active);
 }
 
 .offer-title {
@@ -857,18 +861,19 @@ input[type="radio"].visually-hidden {
 }
 
 .text-wrapper {
+  margin: 0;
   display: flex;
 }
 
 .button-wrapper {
   display: flex;
-  margin-top: auto;
+  margin-top: 16px;
 }
 
 .offer-text {
   margin: 0;
-margin-right: 6px;
-width: 110px;
+  margin-right: 6px;
+  width: 110px;
 }
 
 .offer-price {
@@ -886,20 +891,18 @@ width: 110px;
 }
 
 .button-offer {
-
   width: 142px;
   height: 27px;
   font-size: 14px;
   line-height: 21px;
-
 }
 
 .offer-mark {
   margin: 0;
+  margin-top: 70px;
   padding-top: 3px;
   width: 110px;
   height: 27px;
-  align-self: end;
   color: var(--grey-mark);
   background-color: var(--lightgrey-basic);
   text-align: center;
