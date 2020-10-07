@@ -608,7 +608,7 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
-.parameters-group-number {
+.parameters-group-wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -620,7 +620,7 @@ input[type="radio"].visually-hidden {
   align-items: center;
 }
 
-.parameters-group-number .parameters-item {
+.parameters-group-wrapper .parameters-item {
   width: 226px;
 }
 
