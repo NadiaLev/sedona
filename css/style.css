@@ -614,6 +614,7 @@ input[type="radio"].visually-hidden {
 }
 
 .parameters-item {
+  position: relative; /**/
   display: flex;
   margin: 0;
   margin-bottom: 30px;
@@ -660,19 +661,9 @@ input[type="radio"].visually-hidden {
 }
 
 .parameters-input[type="number"] {
-  padding-left: 25px;
+  padding-left: 20px;
   width: 114px;
   text-align: center;
-}
-
-.date-input-box {
-  position: relative;
-  width: 346px;
-}
-
-.number-input-box {
-  position: relative;
-  width: 114px;
 }
 
 .calendar {
@@ -719,6 +710,11 @@ input[type="radio"].visually-hidden {
 .minus:active path,
 .plus:active path {
   fill: var(--blue-basic);
+}
+
+.minus {
+  top: 0;
+  left: 112px;
 }
 
 .plus {
