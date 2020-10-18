@@ -42,19 +42,19 @@
             <legend class="filter-title">Инфраструктура</legend>
             <ul class="filter-list">
               <li class="filter-item">
-                <input class="visually-hidden filter__input" type="checkbox" id="first-filter-infrastructure"
+                <input class="visually-hidden filter-input" type="checkbox" id="first-filter-infrastructure"
                   name="first-filter-infrastructure" checked>
-                <label class="filter__label" for="first-filter-infrastructure">Бассейн</label>
+                <label class="filter-label" for="first-filter-infrastructure">Бассейн</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter__input" type="checkbox" id="second-filter-infrastructure"
+                <input class="visually-hidden filter-input" type="checkbox" id="second-filter-infrastructure"
                   name="second-filter-infrastructure disabled">
-                <label class="filter__label" for="second-filter-infrastructure">Парковка</label>
+                <label class="filter-label" for="second-filter-infrastructure">Парковка</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter__input" type="checkbox" id="third-filter-infrastructure"
+                <input class="visually-hidden filter-input" type="checkbox" id="third-filter-infrastructure"
                   name="third-filter-infrastructure">
-                <label class="filter__label" for="third-filter-infrastructure">WI-FI</label>
+                <label class="filter-label" for="third-filter-infrastructure">WI-FI</label>
               </li>
             </ul>
           </fieldset>
@@ -62,19 +62,19 @@
             <legend class="filter-title">Тип жилья</legend>
             <ul class="filter-list">
               <li class="filter-item">
-                <input class="visually-hidden filter__input" type="checkbox" id="first-filter-type"
+                <input class="visually-hidden filter-input" type="checkbox" id="first-filter-type"
                   name="first-filter-type" checked>
-                <label class="filter__label" for="first-filter-type">Гостиница</label>
+                <label class="filter-label" for="first-filter-type">Гостиница</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter__input" type="checkbox" id="second-filter-type"
+                <input class="visually-hidden filter-input" type="checkbox" id="second-filter-type"
                   name="second-filter-type" checked>
-                <label class="filter__label" for="second-filter-type">Мотель</label>
+                <label class="filter-label" for="second-filter-type">Мотель</label>
               </li>
               <li class="filter-item">
-                <input class="visually-hidden filter__input" type="checkbox" id="third-filter-type"
+                <input class="visually-hidden filter-input" type="checkbox" id="third-filter-type"
                   name="third-filter-type" checked>
-                <label class="filter__label" for="third-filter-type">Апартаменты</label>
+                <label class="filter-label" for="third-filter-type">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
@@ -103,14 +103,14 @@
         <div class="sort-group">
           <p class="sort-title">Сортировка:</p>
           <ul class="sort-list">
-            <li class="sort-item"><a href="#">по цене</a></li>
+            <li class="sort-item"><a class="current" href="#">по цене</a></li>
             <li class="sort-item"><a href="#">по типу</a></li>
             <li class="sort-item"><a href="#">по рейтингу</a></li>
           </ul>
         </div>
         <div class="sort-arrows">
           <a class="arrow arrow-up" href="#" aria-label="По возрастанию"></a>
-          <a class="arrow arrow-down" href="#" aria-label="По убыванию"></a>
+          <a class="arrow arrow-down current" href="#" aria-label="По убыванию"></a>
         </div>
       </section>
 
@@ -133,9 +133,9 @@
               <button class="button button-offer">Забронировать</button>
             </div>
           </div>
-          <div class="mark-wrapper">
+
             <p class="offer-mark">Рейтинг: <span>8,5</span></p>
-          </div>
+
         </article>
         <article class="offers-item">
           <div class="hotel-box">
@@ -154,9 +154,7 @@
               <button class="button button-offer">Забронировать</button>
             </div>
           </div>
-          <div class="mark-wrapper">
             <p class="offer-mark">Рейтинг: <span>8,9</span></p>
-          </div>
         </article>
         <article class="offers-item">
           <div class="hotel-box">
@@ -175,10 +173,8 @@
               <button class="button button-offer">Забронировать</button>
             </div>
           </div>
-          <div class="mark-wrapper">
             <p class="offer-mark">Рейтинг: <span>9,2</span></p>
-          </div>
-        </article>
+               </article>
       </section>
     </main>
 
