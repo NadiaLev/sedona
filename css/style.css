@@ -155,14 +155,14 @@ input[type="radio"].visually-hidden {
 /*Header*/
 .main-nav {
   position: relative;
-  min-height: 70px;
+  min-height: 70px;/*если это правило и margin у promo -14px убрать, то логотип уезжает вверх*/
 }
 
 .logo {
   position: absolute;
+  display: inline-flex;
   left: 50%;
   top: 50%;
-  height: 70px;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -170,33 +170,26 @@ input[type="radio"].visually-hidden {
 .nav-list {
   display: flex;
   margin: 0;
+  min-height: 56px;
+  align-items: center;
   padding: 0;
   list-style: none;
 }
 
 .nav-item {
   width: 300px;
-  min-height: 56px;
-  padding-top: 15px;
+  box-sizing: border-box;
 }
 
-.nav-item:nth-child(1) {
-  width: 227px;
-  padding-left: 73px;
-  text-align: left;
-}
+.nav-item:first-child {
+   padding-left: 73px;
+  }
 
-.nav-item:nth-child(2) {
-  text-align: left;
-}
-
-.nav-item:nth-child(3) {
-  text-align: right;
-}
-
-.nav-item:nth-child(4) {
-  width: 227px;
+.nav-item:last-child {
   padding-right: 73px;
+}
+
+.right {
   text-align: right;
 }
 
@@ -337,7 +330,7 @@ input[type="radio"].visually-hidden {
 
 /*Promo*/
 .promo {
-  margin-top: -15px;
+  margin-top: -14px;
 }
 
 .promo-photo {
@@ -844,7 +837,7 @@ input[type="radio"].visually-hidden {
   background-position: 0 0;
 }
 
-.filter-input:checked + label::after {
+.filter-input:checked + label::before {
   position: absolute;
   content: "";
   top: -1px;
@@ -857,10 +850,18 @@ input[type="radio"].visually-hidden {
 }
 
 .filter-input:focus + label::before,
-.filter-input:checked:focus + label::after {
+.filter-input:checked:focus + label::before {
   opacity: 1;
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
+}
+
+.filter-input:disabled + label::before {
+  background-image: url("../img/checkbox-off-grey.svg");
+}
+
+.filter-input:checked:disabled + label::before {
+  background-image: url("../img/checkbox-on-grey.svg");
 }
 
 .filter-range {
@@ -1035,20 +1036,19 @@ input[type="radio"].visually-hidden {
   border-bottom: 1px dashed var(--blue-basic);
 }
 
-.sort-item a:hover {
-  color: var(--blue-basic);
-  opacity: 1;
-  border-bottom: 1px dashed var(--blue-basic);
-}
-
-.sort-item a:focus,
 .sort-item .current {
   color: var(--blue-basic);
   opacity: 1;
   border-bottom: none;
 }
 
-.sort-item a:active {
+.sort-item a:not(.current):hover {
+  color: var(--blue-basic);
+  opacity: 1;
+  border-bottom: 1px dashed var(--blue-basic);
+}
+
+.sort-item a:not(.current):active {
   color: var(--black-basic);
   opacity: 1;
   border-bottom: none;
@@ -1071,9 +1071,15 @@ input[type="radio"].visually-hidden {
   border-left-color: transparent;
 }
 
-.arrow:active,
+.arrow:active,/*active не работает, если есть hover*/
 .current {
   border-color: var(--blue-basic);
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+.arrow:not(.current):hover {
+  border-color: var(--black-basic);
   border-right-color: transparent;
   border-left-color: transparent;
 }
@@ -1179,30 +1185,6 @@ input[type="radio"].visually-hidden {
   line-height: 21px;
 }
 
-/* .mark-wrapper {
-  background-image: url("../img/star.svg");
-  background-repeat: space no-repeat;
-
-}
-.offers-item:nth-of-type(1) .mark-wrapper {
-  background-image: url("../img/star.svg");
-  background-repeat: space no-repeat;
-background-position: 100% 5px;
-}*/
-
-.offers-item:nth-of-type(2) .mark-wrapper {
-  background-image: url("../img/star.svg"), url("../img/star.svg"),
-    url("../img/star.svg");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 100% 5px, 75% 5px, 50% 5px;
-}
-
-.offers-item:nth-of-type(3) .mark-wrapper {
-  background-image: url("../img/star.svg"), url("../img/star.svg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: 100% 5px, 75% 5px;
-}
-
 .offer-mark {
   position: relative;
   margin: 0;
@@ -1226,14 +1208,14 @@ background-position: 100% 5px;
   background-repeat: space no-repeat;
 }
 
-.offers-item:nth-of-type(1) .offer-mark::before {
+.four-stars::before {
   width: 89px;
 }
 
-.offers-item:nth-of-type(2) .offer-mark::before {
+.three-stars::before {
   width: 64px;
 }
 
-.offers-item:nth-of-type(3) .offer-mark::before {
+.two-stars::before {
   width: 41px;
 }
