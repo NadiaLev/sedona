@@ -155,7 +155,7 @@ input[type="radio"].visually-hidden {
 /*Header*/
 .main-nav {
   position: relative;
-  min-height: 70px;/*если это правило и margin у promo -14px убрать, то логотип уезжает вверх*/
+  min-height: 70px; /*если это правило и margin у promo -14px убрать, то логотип уезжает вверх*/
 }
 
 .logo {
@@ -182,8 +182,8 @@ input[type="radio"].visually-hidden {
 }
 
 .nav-item:first-child {
-   padding-left: 73px;
-  }
+  padding-left: 73px;
+}
 
 .nav-item:last-child {
   padding-right: 73px;
@@ -226,8 +226,8 @@ input[type="radio"].visually-hidden {
 
 .contacts {
   margin: 0;
-  margin-top: -16px;
-  padding-left: 73px;
+  margin-top: -15px;
+  padding-left: 74px;
   font-size: 21px;
   line-height: 36px;
   font-weight: bold;
@@ -315,7 +315,7 @@ input[type="radio"].visually-hidden {
   align-self: center;
   margin-right: 7px;
   width: 75px;
-  height: 26px;
+  height: 25px;
   line-height: 26px;
 }
 
@@ -428,7 +428,7 @@ input[type="radio"].visually-hidden {
 }
 
 .advantages-item-second .advantages-description {
-  padding: 49px;
+  padding: 49px 45px;
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 }
@@ -582,7 +582,7 @@ input[type="radio"].visually-hidden {
 .search-modal-wrapper {
   position: relative;
   margin: 0 auto;
-  margin-top: 44px;
+  margin-top: 45px;
   width: 568px;
 }
 
@@ -593,10 +593,15 @@ input[type="radio"].visually-hidden {
   height: 395px;
   margin: 0 auto;
   padding: 55px;
+  padding-top: 54px;
   background-color: var(--white-basic);
   box-shadow: 0px 7px 15px var(--modal-shadow);
   box-sizing: border-box;
   z-index: 2;
+ }
+
+.modal-hidden {
+  display: none;
 }
 
 .parameters-group {
@@ -640,6 +645,7 @@ input[type="radio"].visually-hidden {
   padding-left: 10px;
   width: 346px;
   height: 38px;
+  color: inherit;
   font-size: inherit;
   text-transform: inherit;
   line-height: 26px;
@@ -659,8 +665,16 @@ input[type="radio"].visually-hidden {
   outline: none;
 }
 
+.parameters-input::-webkit-input-placeholder {
+  color: var(--black-basic);
+}
+
+.parameters-input::-moz-placeholder {
+  color: var(--black-basic);
+}
+
 .parameters-input[type="number"] {
-  padding-top: 10px;
+  padding-top: 7px;
   padding-left: 24px;
   width: 114px;
   text-align: center;
@@ -674,12 +688,6 @@ input[type="radio"].visually-hidden {
   background: transparent;
   cursor: pointer;
   z-index: 1;
-}
-
-.calendar:focus,
-.calendar:hover,
-.calendar:active {
-  outline: none;
 }
 
 .calendar:focus path,
@@ -766,7 +774,7 @@ input[type="radio"].visually-hidden {
 /*Filters*/
 .filters {
   margin-top: -15px;
-  padding-top: 25px;
+  padding-top: 26px;
   padding-right: 73px;
   padding-bottom: 19px;
   padding-left: 73px;
@@ -1015,7 +1023,7 @@ input[type="radio"].visually-hidden {
 .sort-list {
   display: flex;
   margin: 0;
-  margin-top: 1px;
+  margin-top: 2px;
   padding: 0;
   list-style: none;
 }
@@ -1058,38 +1066,64 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 6px;
 }
 
 .arrow {
-  margin: 0;
-  margin-left: 12px;
-  border: 10px solid var(--grey-arrow);
-  border-right-width: 5px;
-  border-right-color: transparent;
-  border-left-width: 5px;
-  border-left-color: transparent;
-}
-
-.arrow:active,/*active не работает, если есть hover*/
-.current {
-  border-color: var(--blue-basic);
-  border-right-color: transparent;
-  border-left-color: transparent;
-}
-
-.arrow:not(.current):hover {
-  border-color: var(--black-basic);
-  border-right-color: transparent;
-  border-left-color: transparent;
-}
-
-.arrow-up {
-  border-top-width: 0;
+  position: relative;
+  width: 16px;
+  height: 17px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .arrow-down {
-  border-bottom-width: 0;
+  margin-left: 9px;
+}
+
+.arrow-up::after {
+  position: absolute;
+  content: "";
+  top: 7px;
+  left: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5.5px 10px 5.5px;
+  border-color: transparent transparent var(--grey-arrow) transparent;
+}
+
+.arrow-down::after {
+  position: absolute;
+  content: "";
+  top: 6px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 5.5px 0 5.5px;
+  border-color: var(--grey-arrow) transparent transparent transparent;
+}
+
+.arrow-up:hover::after {
+  border-color: transparent transparent var(--black-basic) transparent;
+}
+
+.arrow-down:hover::after {
+  border-color: var(--black-basic) transparent transparent transparent;
+}
+
+.arrow-up:active::after {
+  border-color: transparent transparent var(--blue-basic) transparent;
+}
+
+.arrow-down:active::after {
+  border-color: var(--blue-basic) transparent transparent transparent;
+}
+
+.arrow-down.current::after {
+  border-color: var(--blue-basic) transparent transparent transparent;
 }
 
 /*Offers*/
@@ -1203,7 +1237,7 @@ input[type="radio"].visually-hidden {
   content: "";
   height: 25px;
   right: 0;
-  top: -65px;
+  top: -64px;
   background-image: url("../img/star.svg");
   background-repeat: space no-repeat;
 }
