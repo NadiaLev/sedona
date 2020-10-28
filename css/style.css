@@ -571,19 +571,23 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 
+.search-modal-wrapper {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 45px;
+  height: 481px;
+  width: 568px;
+  overflow: hidden;
+}
+
 .button-search {
+  position: relative;
   padding: 30px 100px;
   width: 100%;
   height: 86px;
   margin: 0 auto;
   box-sizing: border-box;
-}
-
-.search-modal-wrapper {
-  position: relative;
-  margin: 0 auto;
-  margin-top: 45px;
-  width: 568px;
+  z-index: 3;
 }
 
 /*Modal*/
@@ -598,10 +602,40 @@ input[type="radio"].visually-hidden {
   box-shadow: 0px 7px 15px var(--modal-shadow);
   box-sizing: border-box;
   z-index: 2;
- }
+}
 
 .modal-hidden {
   display: none;
+}
+
+.modal-show {
+  animation: appearance 800ms;
+}
+
+@keyframes appearance {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  20% {
+    transform: translateY(-80%);
+  }
+
+  40% {
+    transform: translateY(-60%);
+  }
+
+  60% {
+    transform: translateY(-40%);
+  }
+
+  80% {
+    transform: translateY(-20%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .parameters-group {
@@ -748,6 +782,7 @@ input[type="radio"].visually-hidden {
 /*Map*/
 .map {
   position: relative;
+  margin-top: -395px;
   margin-bottom: -120px;
 }
 
