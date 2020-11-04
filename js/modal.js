@@ -23,6 +23,6 @@ form.addEventListener("submit", function (evt) {
       arrival.focus();
     } else {
       departure.focus();
-     }
+    }
   }
 });
